@@ -2,8 +2,7 @@
 
 these are some study note of becming an architect 
 
-## [design pattern 设计模式](https://github.com/teartao/becoming-architect/design-pattern)
-
+## design pattern 设计模式
 ### Creational 创建型
 
 1. singleton（单例）
