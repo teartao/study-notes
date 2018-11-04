@@ -2,37 +2,37 @@
 
 these are some study note of becming an architect 
 
-## design pattern 设计模式
+## [design pattern 设计模式](https://github.com/teartao/becoming-architect/design-pattern)
 
 ### Creational 创建型
 
-1. [singleton（单例）](https://github.com/teartao/becoming-architect/design-pattern/singleton/src/cn/neotao/SingletonApp)
+1. singleton（单例）
 
-2. [prototype（原型）](https://github.com/teartao/becoming-architect/design-pattern/prototype/src/cn/neotao/PrototypeAPP)
+2. prototype（原型）
 
-3. [abstract factory（抽象工厂）](https://github.com/teartao/becoming-architect/design-pattern/abstract-factory/src/cn/neotao/AbstractFactoryApp)
+3. abstract factory（抽象工厂）
 
-4. [factory method（工厂方法）](https://github.com/teartao/becoming-architect/design-pattern/factory-method/src/cn/neotao/FactoryMethodApp)
+4. factory method（工厂方法）
 
 
 
 ### Structural 结构型
 
-1. [proxy（代理）](https://github.com/teartao/becoming-architect/design-pattern/proxy/src/cn/neotao/ProxyApp)
+1. proxy（代理）
 
-2. [delegator（委派者、委托者）](https://github.com/teartao/becoming-architect/design-pattern/delegator/src/cn/neotao/DelegatorApp)
+2. delegator（委派者、委托者）
 
-3. [decorator（装饰器）](https://github.com/teartao/becoming-architect/design-pattern/decorator/src/cn/neotao/DecoratorApp)
+3. decorator（装饰器）
 
-4. [observer（观察者）](https://github.com/teartao/becoming-architect/design-pattern/observer/src/cn/neotao/ObserverApp)
+4. observer（观察者）
 
-5. [adapter（适配器）](https://github.com/teartao/becoming-architect/design-pattern/adapter/src/cn/neotao/AdapterApp)
+5. adapter（适配器）
 
-6. [template method（模板方法）](https://github.com/teartao/becoming-architect/design-pattern/template-method/src/cn/neotao/TemplateMethodApp)
+6. template method（模板方法）
 
-### behavioral 行为型
+### Behavioral 行为型
 
-1. [strategy（策略）](https://github.com/teartao/becoming-architect/design-pattern/strategy/src/cn/neotao/StrategyApp)
+1. strategy（策略）
 
 ### other design pattern 其它设计模式
 
