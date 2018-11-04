@@ -7,6 +7,9 @@ package cn.neotao.simple;
  */
 public class SimpleFactoryApp {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        SimpleFactory phoneSimpleFactory = new SimpleFactory();
+        phoneSimpleFactory.getPhone(SimpleFactory.nokia).getModel();
+        phoneSimpleFactory.getPhone(SimpleFactory.samsung).getModel();
+        phoneSimpleFactory.getPhone(SimpleFactory.iPhone).getModel();
     }
 }

@@ -7,6 +7,9 @@ package cn.neotao.abst;
  */
 public class AbstractFactoryApp {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        Factory phoneFactory = new PhoneFactory();
+        phoneFactory.getNokia().getModel();
+        phoneFactory.getSamsung().getModel();
+        phoneFactory.getIPhone().getModel();
     }
 }

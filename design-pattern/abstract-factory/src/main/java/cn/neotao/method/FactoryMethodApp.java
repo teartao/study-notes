@@ -7,6 +7,11 @@ package cn.neotao.method;
  */
 public class FactoryMethodApp {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        Factory iPhoneFactory = new AppleFactory();
+        iPhoneFactory.getPhone().getModel();
+        Factory samsungFactory = new SamsungFactory();
+        samsungFactory.getPhone().getModel();
+        Factory nokiaFactory = new NokiaFactory();
+        nokiaFactory.getPhone().getModel();
     }
 }
