@@ -11,9 +11,11 @@ these are some study note of becming an architect
 
 3. abstract factory（抽象工厂）
 
-4. factory method（工厂方法）
+   - 简单工厂
 
+   - 工厂方法
 
+   - 抽象工厂
 
 ### Structural 结构型
 
