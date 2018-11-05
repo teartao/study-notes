@@ -59,7 +59,7 @@ public void getNokiaAgain(){
 }
 ```
 
-这时候，我们的手机已经由Nokia升级为了Andriod系统，不再用Symbia了，它多了很多功能，比如触控，比如切水果，如果我们想修改对象的功能，那么我们就要在上面的getBaseNokia里面修改了。
+这时候，我们的手机已经由Nokia升级为了Andriod系统，不再用Symbian了，它多了很多功能，比如触控，比如切水果，如果我们想修改对象的功能，那么我们就要在上面的getBaseNokia里面修改了。
 
 ```java
 public Nokia getBaseNokia(){
@@ -81,9 +81,9 @@ public void getNokiaAgain(){
 }
 ```
 
-但是，还有很多农村小伙子，他们依然在用Symbia，他们并不会用触控，这样一改，大家就都要把手机返厂去安装触控屏幕吗？这显然不行。最好的方法是不动它(getBaseNokia)。
+但是，还有很多农村小伙子，他们依然在用Symbian，他们并不会用触控，这样一改，大家就都要把手机返厂去安装触控屏幕吗？这显然不行。最好的方法是不动它(getBaseNokia)。
 
-这时，我们的Factory有了两个产品，一种是旧版Symbia的BaseNokia，还有一种是新版的SmartNokia，所以Factory多了一个方法getSmartNokia:
+这时，我们的Factory有了两个产品，一种是旧版Symbian的BaseNokia，还有一种是新版的SmartNokia，所以Factory多了一个方法getSmartNokia:
 
 ```java
 public Nokia getBaseNokia(){
