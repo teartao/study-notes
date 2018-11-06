@@ -9,7 +9,7 @@ these are some study note of becming an architect
 
 2. prototype（原型）
 
-3. abstract factory（抽象工厂）
+3. [abstract factory（抽象工厂）](https://github.com/teartao/becoming-architect/tree/master/design-pattern/abstract-factory)
 
    - 简单工厂
 
