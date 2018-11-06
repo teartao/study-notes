@@ -10,7 +10,7 @@ public static void main(String[] args) {
     new IPhone().getModel();
 }
 ```
-当对象的实例化比较复杂时，每次调用对象都需要进行实例化，这显然会增加大量重复代码，可能像下面这样：
+当对象的实例化比较复杂时，每次调用对象都需要通过'new'手动进行实例化，这显然会增加大量重复代码，可能像下面这样：
 
 ```java
 public void getNokia(){
