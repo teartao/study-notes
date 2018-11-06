@@ -86,6 +86,9 @@ public void getNokiaAgain(){
 这时，我们的Factory有了两个产品，一种是旧版Symbian的BaseNokia，还有一种是新版的SmartNokia，所以Factory多了一个方法getSmartNokia:
 
 ```java
+/**
+ * Factory
+ */
 public Nokia getBaseNokia(){
     Nokia nokia = new Nokia();
     nokia.setColor("white");
@@ -93,6 +96,7 @@ public Nokia getBaseNokia(){
     nokia.setHeight("110mm");
     // ... too many other information 
 }
+
 // smart Nokia
 public Nokia getSmartNokia(){
     nokia.setTouch(true);//我们有触控功能了
@@ -114,11 +118,6 @@ public void getLatestNokia(){
     nokia.getModel();
 }
 ```
-
-
-
-
-
 
 
 // to be continued
