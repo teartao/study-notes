@@ -16,4 +16,18 @@
 
 
 
+## Redis
 
+### 主要数据结构
+
+- String
+- List
+- Hash
+- Set
+- Sorted Set
+
+
+
+## RabbitMq
+
+- 基本架构
