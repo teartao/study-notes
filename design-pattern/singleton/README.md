@@ -1,4 +1,5 @@
 [英文原文链接](http://java-design-patterns.com/patterns/singleton/)
+
 [单例模式样例代码](https://github.com/iluwatar/java-design-patterns/tree/master/singleton)
 
 # Singleton 单例模式
@@ -99,7 +100,7 @@ Use the Singleton pattern when
  - 工具类 ：方法均为静态方法(static)，且必须通过【类名.方法()】来调用
  - 数据源：单项目中(分布式除外)全局只配置一个数据源，且提供统一的数据源连接池为整个系统提供数据库访问支持。
 
-##思考
+## 思考
 那么，如何保证只有单实例？如何使访问入口只有一个？
 通过上文发现java中通过private实现构造私有。并在统一的地方(系统初始化时)提供一个访问入口，由于系统只会启动一次，因此可以保证访问入口只有一个。
 
