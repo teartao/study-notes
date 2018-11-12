@@ -1,4 +1,113 @@
-# thinking in abstract factory 关于工厂模式的思考
+[英文原文链接](http://java-design-patterns.com/patterns/factory-method/)
+[单例模式样例代码](https://github.com/iluwatar/java-design-patterns/tree/master/factory-method)
+# Factory Method 工厂方法
+* difficulty-beginner   难度-初学者
+*  gang of four    四人帮
+*  java    java
+* creational 创造型
+
+# Also known as 别名
+Virtual Constructor  虚拟构造器
+
+# Intent 意图
+Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+
+定义一个用于创建对象的接口，但让子类决定实例化哪个类。工厂方法允许类的实例化方法到子类中进行。
+
+# Explanation 解释
+Real world example
+现实生活中的例子
+
+>Blacksmith manufactures weapons. Elves require Elvish weapons and orcs require Orcish weapons. Depending on the customer at hand the right type of blacksmith is summoned.
+> 铁匠制造武器。精灵需要精灵武器，兽人需要兽人武器。根据(手头)顾客(的不同类型)，铁匠给予不同的(武器)类型。
+
+# In plain words 简单来说 
+> It provides a way to delegate the instantiation logic to child classes.
+> 它提供了一种将实例化逻辑委托给子类的方式。
+
+#Wikipedia says 维基百科中的描述
+>In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.
+>在基于类的编程中，工厂方法模式是一种创造性模式，它使用工厂方法来处理创建对象的问题，而无需指定将要创建的对象的确切类。通过调用工厂方法(在接口中指定并由子类实现，或在基类中实现并可由派生类覆盖)来创建对象，而不是通过调用构造函数(来创建对象)。
+> 上面这段长句不好理解，我给断开分成短句，英语好的自行忽略：
+> 在基于类的编程中
+
+#Programmatic Example 程序实例
+以我们的铁匠例子为例。首先，我们有一个铁匠接口和一些实现方法。
+```java
+public interface Blacksmith {
+  Weapon manufactureWeapon(WeaponType weaponType);
+}
+
+public class ElfBlacksmith implements Blacksmith {
+  public Weapon manufactureWeapon(WeaponType weaponType) {
+    return new ElfWeapon(weaponType);
+  }
+}
+
+public class OrcBlacksmith implements Blacksmith {
+  public Weapon manufactureWeapon(WeaponType weaponType) {
+    return new OrcWeapon(weaponType);
+  }
+}
+```
+Now as the customers come the correct type of blacksmith is summoned and requested weapons are manufactured
+现在，随着客户要求的不同，将召唤不同类型的铁匠来制造指定类型的武器。
+```java
+Blacksmith blacksmith = new ElfBlacksmith();
+blacksmith.manufactureWeapon(WeaponType.SPEAR);
+blacksmith.manufactureWeapon(WeaponType.AXE);
+// Elvish weapons are created
+```
+#Applicability 适用场景
+Use the Factory Method pattern when 
+
+ - a class can't anticipate the class of objects it must create
+ - a class wants its subclasses to specify the objects it creates
+ - classes delegate responsibility to one of several helper subclasses, and you want to localize the knowledge of which helper subclass is the delegate
+
+当遇到下列场景时使用工厂方法模式
+
+ - 一个类不能预知它所需创建的对象类型
+ - 一个类想要让它的子类来确定所需创建的对象
+ - 类将责任委托给几个helper子类中的一个，您希望将所委托helper子类的信息本地化。
+
+#Presentations 演示文稿
+[Factory Method Pattern](http://java-design-patterns.com/patterns/factory-method/etc/presentation.html)
+该文稿内容和本文大体一致，仅多了Diagram部分内容，详情如下
+
+##Diagram 图解
+![Factory Method](http://java-design-patterns.com/patterns/factory-method/etc/diagram1.png)
+
+#Real world examples 现有样例
+
+ - [java.util.Calendar](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#getInstance--) 
+ - [java.util.ResourceBundle](https://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html#getBundle-java.lang.String-) 
+ - [java.text.NumberFormat](https://docs.oracle.com/javase/8/docs/api/java/text/NumberFormat.html#getInstance--)
+ - [java.nio.charset.Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html#forName-java.lang.String-)     
+ - [java.net.URLStreamHandlerFactory](https://docs.oracle.com/javase/8/docs/api/java/net/URLStreamHandlerFactory.html#createURLStreamHandler-java.lang.String-)
+ - [java.util.EnumSet](https://docs.oracle.com/javase/8/docs/api/java/util/EnumSet.html#of-E-)
+ - [javax.xml.bind.JAXBContext](https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/JAXBContext.html#createMarshaller--)
+
+#Credits 参考文献
+Design Patterns: Elements of Reusable Object-Oriented Software
+
+# 笔者简述
+通过意图(Intent)发现，工厂方法的满足条件为“父类提供规范，让子类进行实例化”。
+
+## 为什么要使用工厂方法模式
+
+// todo 
+
+虽然啰嗦了一点，但是把抽象类都给串起来了，有没有好理解一点？
+
+# 参考
+[ 深入浅出设计模式——工厂方法模式（Factory Method） ](https://www.cnblogs.com/Bobby0322/p/4179921.html)
+
+
+
+------
+
+# Thinking （关于工厂模式的思考）
 
 ## 概述
 用户想要得到手机经历了以下几个过程：
