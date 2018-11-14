@@ -13,6 +13,8 @@ public class Cat extends Animal implements Serializable {
 
     private int footNum;
 
+    private transient String favourite;
+
     public int getFootNum() {
         return footNum;
     }
@@ -27,6 +29,14 @@ public class Cat extends Animal implements Serializable {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(String favourite) {
+        this.favourite = favourite;
     }
 
     @Override
