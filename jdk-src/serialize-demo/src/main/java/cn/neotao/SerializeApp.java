@@ -12,8 +12,18 @@ public class SerializeApp {
         Cat cat = new Cat();
         cat.setColor("yellow");
         cat.setFootNum(4);
+        cat.setFavourite("fish");
+
+        System.out.println(cat);
+        // Cat: {name='null', footNum=4, color='yellow'}
+        //  superClass didn't [ implements Serializable ] so [ name = null ]
+        //  transient provided , so [ favourite ] haven't shown
 
         MySerializer serializer = new JavaStringSerializer();
-        System.out.println(new String(serializer.serialize(cat)));
+        byte[] catByte = serializer.serialize(cat);
+        System.out.println(new String(catByte));
+        Cat deSerializedCat = serializer.deSerialize(catByte, Cat.class);
+        System.out.println(deSerializedCat);
+
     }
 }
