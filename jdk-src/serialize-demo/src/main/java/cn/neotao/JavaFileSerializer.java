@@ -33,7 +33,7 @@ public class JavaFileSerializer implements MySerializer {
     public <T> T deSerialize(byte[] data, Class<T> clazz) {
         ObjectInputStream objectInputStream = null;
         try {
-            objectInputStream = new ObjectInputStream(new FileInputStream(new File("java-serialize")));
+            objectInputStream = new ObjectInputStream(new FileInputStream(new File(serializedFilePath)));
             return (T) objectInputStream.readObject();
         } catch (IOException e) {
             e.printStackTrace();
