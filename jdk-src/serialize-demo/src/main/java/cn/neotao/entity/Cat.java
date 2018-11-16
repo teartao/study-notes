@@ -8,6 +8,7 @@ import java.io.Serializable;
  * @date 2018/10/14
  */
 public class Cat extends Animal implements Serializable {
+    private static final long serialVersionUID = 123123123123123123L;
 
     private String color;
 

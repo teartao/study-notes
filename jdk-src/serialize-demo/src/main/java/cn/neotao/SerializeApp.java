@@ -25,5 +25,8 @@ public class SerializeApp {
         Cat deSerializedCat = serializer.deSerialize(catByte, Cat.class);
         System.out.println(deSerializedCat);
 
+        // TODO: 2018/11/15 usage of serialVersionUID in DTO
+
+
     }
 }
