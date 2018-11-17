@@ -5,4 +5,7 @@
 - fastjson 序列化
 - xml 序列化
 
+### serialVersionUID
+### transient
+
 ## 
