@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @date 2018/10/14
  */
 public class Cat extends Animal implements Serializable {
-    private static final long serialVersionUID = 1111;
+    private static final long serialVersionUID = 123123123123123123L;
 
     private String color;
 
@@ -38,10 +38,6 @@ public class Cat extends Animal implements Serializable {
 
     public void setFavourite(String favourite) {
         this.favourite = favourite;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
     }
 
     @Override

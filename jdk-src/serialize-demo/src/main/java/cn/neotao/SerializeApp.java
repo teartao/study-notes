@@ -32,12 +32,12 @@ public class SerializeApp {
         MySerializer fileSerializer = new JavaFileSerializer();
 
         byte[] fileSerializedCatByte = fileSerializer.serialize(cat);
-
         /*
          * usage of serialVersionUID in DTO
-         * 1. after serialized to file ，
-         * 2. change cat serialVersionUID
-         * 3. deSerialize cat from file , will cause InvalidClassException
+         * 1. delete cat serialVersionUID
+         * 2. serialized to file ，
+         * 3. add cat serialVersionUID
+         * 4. deSerialize cat from file , will cause InvalidClassException
          */
 
         Cat fileDeSerializedCat = fileSerializer.deSerialize(null, Cat.class);
