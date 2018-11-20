@@ -29,7 +29,7 @@ public class Dog implements Cloneable {
     }
 
     @Override
-    protected Dog clone() throws CloneNotSupportedException {
+    public Dog clone() throws CloneNotSupportedException {
         return (Dog) super.clone();
     }
 }
