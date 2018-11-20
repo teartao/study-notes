@@ -1,4 +1,4 @@
-package cn.neotao.entity;
+package cn.neotao.entity.serialize;
 
 /**
  * @author neotao

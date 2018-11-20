@@ -1,8 +1,6 @@
 package cn.neotao;
 
-import cn.neotao.entity.Cat;
-
-import java.io.InvalidClassException;
+import cn.neotao.entity.serialize.Cat;
 
 /**
  * @author neotao
