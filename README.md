@@ -1,6 +1,11 @@
 # becoming-architect
 
 these are some study note of becming an architect 
+## basic 计算机基础
+### 操作系统原理
+[哈工大李治军操作系统 (百度云) ](https://pan.baidu.com/s/1nYezvewH09i3Tf6YPeUKSw)
+提取码：362R
+### 现代操作系统
 
 ## design pattern 设计模式
 ### Creational 创建型
