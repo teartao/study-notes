@@ -9,8 +9,6 @@
  * creational 创造性的
 
 ## Intent 意图
-Ensure a class only has one instance, and provide a global point of access to it.
-保证一个类只有一个实例，并提供一个全局访问点以供访问。
 
 
 ## Explanation 解释
