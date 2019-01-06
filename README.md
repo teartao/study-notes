@@ -43,7 +43,7 @@
 
 ### Behavioral 行为型
 
-1. strategy（策略）
+1. [strategy（策略）](https://github.com/teartao/becoming-architect/tree/master/design-pattern/strategy)
 
 ### other design pattern 其它设计模式
 
