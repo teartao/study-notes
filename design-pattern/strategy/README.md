@@ -1,45 +1,39 @@
 [英文原文链接](https://java-design-patterns.com/patterns/strategy/)
 
-[单例模式样例代码](https://github.com/iluwatar/java-design-patterns/tree/master/strategy)
+[策略模式样例代码](https://github.com/iluwatar/java-design-patterns/tree/master/strategy)
 
 # Strategy 策略模式
  * difficulty-beginner   难度-初学者
- *  gang of four    四人帮
- *  java    java
- * creational 创造性的
+ * gang of four    四人帮
+ * java java
+ * behavioral 行为性的
+
+## as known as 又名
+Policy 政策模式
 
 ## Intent 意图
-
-
-## Explanation 解释
-
-## Real world example 现实生活中的例子
-
-
-
-# In plain words 简单来说 
-
-# Wikipedia says 维基百科中的描述 
-
-#  Programmatic Example 程序实例
+Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+定义一系列算法，封装每个算法，并使它们可互换。策略允许算法独立于使用它的客户端。
 
 ## Applicability 适用场景
 
-## Typical Use Case 典型用例
+Use the Strategy pattern when 
 
-## Real world examples 现实生活中的例子
+- many related classes differ only in their behavior. Strategies provide a way to configure a class either one of many behaviors
+- you need different variants of an algorithm. for example, you might define algorithms reflecting different space/time trade-offs. Strategies can be used when these variants are implemented as a class hierarchy of algorithms
+- an algorithm uses data that clients shouldn't know about. Use the Strategy pattern to avoid exposing complex, algorithm-specific data structures
+- a class defines many behaviors, and these appear as multiple conditional statements in its operations. Instead of many conditionals, move related conditional branches into their own Strategy class
 
+## Tutorial 教程、样例
 
-## Consequences 使用后果/影响
+- [Strategy Pattern Tutorial](https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial)
 
 ## Credits 参考文献
+- [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)
+- [Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expressions](https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/ref=sr_1_1)
 
-# 笔者简述
 
 ## 思考
-
-
-
 ```java
 /**
 * 这段是接口功能/算法的抽象，每种算法在一个接口里面(接口A的一种实现 接口A的另一种实现)，
