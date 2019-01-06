@@ -20,9 +20,13 @@ Define a family of algorithms, encapsulate each one, and make them interchangeab
 Use the Strategy pattern when 
 
 - many related classes differ only in their behavior. Strategies provide a way to configure a class either one of many behaviors
+- 许多相关类只在他们的行为上有所不同。策略提供了一种方法，它可以将类配置为多种行为之一
 - you need different variants of an algorithm. for example, you might define algorithms reflecting different space/time trade-offs. Strategies can be used when these variants are implemented as a class hierarchy of algorithms
+- 你需要不同的算法变种。例如，您可以定义反映不同空间/时间权衡的算法。当这些变种算法以类的级别结构实现时，可以使用策略
 - an algorithm uses data that clients shouldn't know about. Use the Strategy pattern to avoid exposing complex, algorithm-specific data structures
+- 算法使用客户端不应该知道的数据。使用策略模式可避免暴露复杂的特定于算法的数据结构
 - a class defines many behaviors, and these appear as multiple conditional statements in its operations. Instead of many conditionals, move related conditional branches into their own Strategy class
+- 一个类定义了许多行为，这些行为在其操作中显示为多个条件语句，而不是很多条件，(这种情况下可以)将相关的条件分支移动到自己的Strategy(策略)类中
 
 ## Tutorial 教程、样例
 
