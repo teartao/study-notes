@@ -31,9 +31,9 @@
 
 1. proxy（代理）
 
-2. delegator（委派者、委托者）[spring中Delegate/Dispatcher结尾的类]
+2. delegator（委派者、委托者）【spring中Delegate/Dispatcher结尾的类】
 
-3. decorator（装饰器、包装器）[特殊的适配器]
+3. [decorator（装饰器、包装器）【特殊的适配器】](https://github.com/teartao/becoming-architect/tree/master/design-pattern/decorator)
 
 4. observer（观察者）
 
