@@ -27,13 +27,13 @@
 
    - 抽象工厂
 
-### Structural 结构型
+### Structural 结构型(封装、继承、多态的运用)
 
 1. proxy（代理）
 
-2. delegator（委派者、委托者）
+2. delegator（委派者、委托者）[spring中Delegate/Dispatcher结尾的类]
 
-3. decorator（装饰器）
+3. decorator（装饰器、包装器）[特殊的适配器]
 
 4. observer（观察者）
 
