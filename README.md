@@ -29,7 +29,7 @@
 
 ### Structural 结构型(封装、继承、多态的运用)
 
-1. proxy（代理）
+1. [proxy（代理）](https://github.com/teartao/becoming-architect/tree/master/design-pattern/proxy)
 
 2. delegator（委派者、委托者）【spring中Delegate/Dispatcher结尾的类】
 
