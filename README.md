@@ -37,7 +37,7 @@
 
 4. observer（观察者）
 
-5. adapter（适配器）
+5. [adapter（适配器）](https://github.com/teartao/becoming-architect/tree/master/design-pattern/adapter)
 
 6. delegator（委派者、委托者）
 
