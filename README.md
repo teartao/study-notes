@@ -30,16 +30,16 @@
 ### Structural 结构型(封装、继承、多态的运用)
 
 1. proxy（代理）
-
-2. delegator（委派者、委托者）【spring中Delegate/Dispatcher结尾的类】
-
+2. template method（模板方法）
 3. [decorator（装饰器、包装器）【特殊的适配器】](https://github.com/teartao/becoming-architect/tree/master/design-pattern/decorator)
-
 4. observer（观察者）
-
 5. adapter（适配器）
 
-6. template method（模板方法）
+6. delegator（委派者、委托者）
+
+   - 不属于Gang of Four
+
+   - spring中Delegate/Dispatcher结尾的类
 
 ### Behavioral 行为型
 
