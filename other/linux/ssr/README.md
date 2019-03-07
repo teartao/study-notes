@@ -21,16 +21,3 @@
 [锐速、BBR和BBR_POWERED（魔改）对比测试](https://www.ljchen.com/archives/827)
 
 [锐速、BBR和BBR_POWERED（魔改）对比动图](https://www.hostloc.com/thread-505637-1-1.html)
-
-
-
-## BBR
-
-## BBR魔改版(BBR_POWER)
-
-## 锐速(SpeedServer)
-
-## 锐速增强版(LotServer)
-
-
-
