@@ -10,6 +10,7 @@ public class DataSource {
      * private 私有变量存储实例对象，
      * final防止子孙、反射、外部方法修改
      * static初始化存储
+     * //=new DataSource();下方static代码快可以改为此处实例化
      */
     private final static DataSource INSTANCE;
 
@@ -18,13 +19,14 @@ public class DataSource {
         INSTANCE = new DataSource();
     }
 
-    //private避免外部重复实例化
-    private DataSource() {
-        //判断对象null避免反射修改private为public后，重复创建实例
+    //下面这段不必要，因为static INSTANCE全局只有一个
+   /*
+   private DataSource() {
         if (INSTANCE != null) {
             throw new RuntimeException("DataSource已存在，不能重复创建");
         }
     }
+    */
 
     /*
      * 提供全局访问点
