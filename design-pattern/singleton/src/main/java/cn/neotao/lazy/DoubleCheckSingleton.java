@@ -5,18 +5,20 @@ package cn.neotao.lazy;
  * @version v1.0.0
  * @date 2018/10/14
  */
-public class BeanFactory {
+public class DoubleCheckSingleton {
 
-    private static BeanFactory INSTANCE;
+    //volatile避免内存指令重排序
+    private volatile static DoubleCheckSingleton INSTANCE;
 
 
-    private BeanFactory() {
+    private DoubleCheckSingleton() {
+        //防止反射修改private为public后，重复创建对象，覆盖INSTANCE
         if (INSTANCE != null) {
             throw new RuntimeException("只能存在一个工厂");
         }
     }
 
-    private static BeanFactory getFactory() {
+    private static DoubleCheckSingleton getInstance() {
         /*
          * 实例不存在时才创建
          * 如果只加sync内部if，不加此处if会导致：
@@ -27,7 +29,7 @@ public class BeanFactory {
         if (INSTANCE == null) {
 
             //创建时防止多线程进入，加上synchronized锁定创建代码
-            synchronized (BeanFactory.class) {
+            synchronized (DoubleCheckSingleton.class) {
                 /*
                  * 再次判断，否则可能多线程同时通过外层null判断进来后，
                  * 先后创建多个实例，重复创建场景如下：
@@ -38,7 +40,13 @@ public class BeanFactory {
                  * 因此需要在sync中再次判断对象是否存在
                  */
                 if (INSTANCE == null) {
-                    INSTANCE = new BeanFactory();
+                    /*
+                     * 1.分配内存给这个对象
+                     * 2.初始化对象
+                     * 3.设置lazy指向刚分配的内存地址
+                     * 4.初次访问对象
+                     */
+                    INSTANCE = new DoubleCheckSingleton();
                 }
             }
         }
