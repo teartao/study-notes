@@ -14,11 +14,13 @@ public class SimpleDataSource {
     private final static SimpleDataSource INSTANCE = new SimpleDataSource();
 
     private SimpleDataSource() {
-        //下面这段不必要，因为static INSTANCE全局只有一个
-        //即使构造方法被改为public 获取的INSTANCE 也是初始化创建的那个
-        if (INSTANCE != null) {
-            throw new RuntimeException("DataSource已存在，不能重复创建");
-        }
+        /*
+         *下面这段代码不必要，因为static INSTANCE全局只有一个
+         * 即使构造方法被反射改为public，获取的INSTANCE也是初始化创建的那个
+         */
+        // if (INSTANCE != null) {
+        //     throw new RuntimeException("DataSource已存在，不能重复创建");
+        // }
     }
 
     /*
