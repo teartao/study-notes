@@ -6,7 +6,7 @@ package cn.neotao.hungry;
  * @date 2018/10/14
  */
 public class SimpleSingleton {
-    /*
+    /**
      * private 私有变量存储实例对象，
      * final防止子孙、反射、外部方法修改
      * static初始化存储
@@ -23,7 +23,7 @@ public class SimpleSingleton {
         // }
     }
 
-    /*
+    /**
      * 提供全局访问点
      */
     public static SimpleSingleton getInstance() {

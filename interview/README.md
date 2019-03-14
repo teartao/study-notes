@@ -14,7 +14,7 @@ Java内存模型（Java Memory Model ）
 
 - 可见性
 - 原子性
-- 有序性
+- 有序性(见[单例模式：通过volatile避免指令重排序]())
 
 并发场景可见性、原子性、有序性问题：Runnable、Thread
 
