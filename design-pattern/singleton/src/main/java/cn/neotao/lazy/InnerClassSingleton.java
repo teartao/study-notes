@@ -7,8 +7,11 @@ package cn.neotao.lazy;
  */
 public class InnerClassSingleton {
 
-    public static class IOWriter{
-        private static IOWriter writer;
+    public static InnerClassSingleton getInstance() {
+        return InnerInstanceHolder.INSTANCE;
+    }
 
+    public static class InnerInstanceHolder {
+        private static final InnerClassSingleton INSTANCE = new InnerClassSingleton();
     }
 }

@@ -7,7 +7,9 @@ package cn.neotao.lazy;
  */
 public class DoubleCheckSingleton {
 
-    //volatile避免内存指令重排序 [more](https://blog.csdn.net/UnknownZYB/article/details/81436060)
+    /**
+     * volatile避免内存指令重排序 [more](https://blog.csdn.net/UnknownZYB/article/details/81436060)
+     */
     private volatile static DoubleCheckSingleton INSTANCE;
 
 
@@ -18,7 +20,7 @@ public class DoubleCheckSingleton {
         }
     }
 
-    private static DoubleCheckSingleton getInstance() {
+    public static DoubleCheckSingleton getInstance() {
         /*
          * 实例不存在时才创建
          * 如果只加sync内部if，不加此处if会导致：
