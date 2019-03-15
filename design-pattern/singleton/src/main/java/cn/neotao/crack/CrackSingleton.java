@@ -1,12 +1,10 @@
 package cn.neotao.crack;
 
-import cn.neotao.SingletonTest;
 import cn.neotao.lazy.InnerClassSingleton;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 /**
  * @Author neotao
