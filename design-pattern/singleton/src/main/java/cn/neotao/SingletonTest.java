@@ -19,10 +19,10 @@ public class SingletonTest {
         new Thread(new Runnable() {
             public void run() {
                 while (count < 10) {
-                    initSimpleSingleton(++count);
+                    // initSimpleSingleton(++count);
                     // initStaticSingleton(++count);
                     // initDoubleCheckSingleton(++count);
-                    // initInnerClassSingleton(++count);
+                    initInnerClassSingleton(++count);
                 }
             }
         }).start();
