@@ -7,7 +7,9 @@ package cn.neotao.lazy;
  */
 public class DoubleCheckSingleton {
 
-    //volatile避免内存指令重排序
+    /**
+     * volatile避免内存指令重排序 [more](https://blog.csdn.net/UnknownZYB/article/details/81436060)
+     */
     private volatile static DoubleCheckSingleton INSTANCE;
 
 
@@ -18,7 +20,7 @@ public class DoubleCheckSingleton {
         }
     }
 
-    private static DoubleCheckSingleton getInstance() {
+    public static DoubleCheckSingleton getInstance() {
         /*
          * 实例不存在时才创建
          * 如果只加sync内部if，不加此处if会导致：
@@ -45,6 +47,9 @@ public class DoubleCheckSingleton {
                      * 2.初始化对象
                      * 3.设置lazy指向刚分配的内存地址
                      * 4.初次访问对象
+                     *
+                     * JIT编译器上可能存在指令重排序，真实执行结果顺序为1324，
+                     * 导致实例化对象为null，因此需要为INSTANCE加上volatile避免重排序
                      */
                     INSTANCE = new DoubleCheckSingleton();
                 }

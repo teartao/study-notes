@@ -37,7 +37,7 @@ Use the Strategy pattern when
 - [Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expressions](https://www.amazon.com/Functional-Programming-Java-Harnessing-Expressions/dp/1937785467/ref=sr_1_1)
 
 
-## 思考
+## 伪代码
 ```java
 /**
 * 这段是接口功能/算法的抽象，每种算法在一个接口里面(接口的一种实现为算法A，接口的另一种实现为算法B)，
