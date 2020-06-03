@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * 使用MvcConfig配置View Mapping,如需使用Controller
  * @see com.neotao.springsecurity.controller.MainController
  */
-@Configuration
+// @Configuration
 public class MvcConfig implements WebMvcConfigurer {
 
     @Override
@@ -16,7 +16,6 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/home").setViewName("home");
         registry.addViewController("/").setViewName("home");
         registry.addViewController("/login").setViewName("login");
-        registry.addViewController("/login-error").setViewName("login");
     }
 
 }

@@ -9,10 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
  * 如需使用：可注释掉{@link MvcConfig}中@Configuration 或 删除{@link MvcConfig}
  * 并放开此处@Controller即可
  */
-// @Controller
+@Controller
 public class MainController {
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home() {
+        return "home";
+    }
+
+    @GetMapping("/")
+    public String index() {
         return "home";
     }
 
