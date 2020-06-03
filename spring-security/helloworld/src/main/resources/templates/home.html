@@ -6,7 +6,7 @@
 <body>
 <h1 th:inline="text">Welcome! [[${#httpServletRequest.remoteUser}]]</h1>
 <form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
+    <input  th:if=" ${#httpServletRequest.remoteUser}!=null " type="submit" value="Sign Out"/>
 </form>
 </body>
 </html>
