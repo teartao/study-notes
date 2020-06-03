@@ -2,10 +2,6 @@ package com.neotao.springsecurity.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 使用MvcConfig配置，因此这里@Controller注释掉，
@@ -14,17 +10,17 @@ import javax.servlet.http.HttpServletRequest;
  */
 // @Controller
 public class MainController {
-    @RequestMapping("/")
+    @GetMapping("/")
     public String home() {
         return "home";
     }
 
-    @RequestMapping("/login")
+    @GetMapping("/login")
     public String login() {
         return "login";
     }
 
-    @RequestMapping("/login-error")
+    @GetMapping("/login-error")
     public String loginError() {
         return "login";
     }
