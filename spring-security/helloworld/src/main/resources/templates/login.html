@@ -4,6 +4,9 @@
     <title>Spring Security Example </title>
 </head>
 <body>
+<h1>
+    <a th:href="@{/home}">here</a> to see homePage.
+</h1>
 <div th:if="${param.error}">    Invalid username and password.</div>
 <div th:if="${param.logout}">    You have been logged out.</div>
 <form th:action="@{/login}" method="post">
