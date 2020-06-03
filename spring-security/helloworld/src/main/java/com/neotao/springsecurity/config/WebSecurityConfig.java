@@ -15,8 +15,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/home").permitAll()//home允许所有人访问;
-                .anyRequest().authenticated() /// 不允许匿名访问(重定向到登录)
+                .antMatchers("/home").permitAll() // home允许所有人访问;
+                .anyRequest().authenticated() // 不允许匿名访问(重定向到登录)
                 .and()
                 .formLogin()
                 .loginPage("/login")
