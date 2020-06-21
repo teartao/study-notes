@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: chiebot-eureka-server
+    name: neotao-eureka-server
   profiles:
     # 1. spring.profiles.active 可以通过此处显式指定，
     # 2. 也可以通过jvm参数 -Dspring.profiles.active=dev 在启动时指定
