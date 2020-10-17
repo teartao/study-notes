@@ -262,7 +262,7 @@ public class Consumer {
 
 ## 最后
 
-至此我们就完成了基础的RabbitMQ生产者和消费者通信实现消息的发&收了。后面我会继续讲RabbitMQ和springBoot、Spring Xml方式的继承，还有一些常见用法(封装常用API)等。
+至此我们就完成了基础的RabbitMQ生产者和消费者通信实现消息的发&收了。后面我会继续讲RabbitMQ和springBoot、Spring Xml方式的集成，还有一些常见用法(封装常用API)等。
 
 
 

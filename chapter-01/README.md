@@ -64,7 +64,8 @@ RabbitMQ 是当前热门的消息队列中间件之一。
 2. 将锁定库存消息发送到MQ，库存系统进行锁定和扣库存的操作，然后发送消息到MQ。
 3. 订单系统发现扣库存操作成功，进行订单创建操作，完成后发送消息到MQ
 
-![未命名文件](./imgs/rabbitMQ秒杀场景.png)
+![rabbitMQ秒杀场景](./imgs/rabbitMQ秒杀场景.png)
+![rabbitMQ秒杀场景](./imgs/rabbitMQ秒杀场景.png)
 
 
 
