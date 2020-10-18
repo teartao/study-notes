@@ -1,7 +1,6 @@
 package com.neotao.rabbitmq.samples.ch03;
 
 import com.neotao.rabbitmq.samples.ch03.producer.Producer01;
-import com.neotao.rabbitmq.samples.ch03.producer.Producer02;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
