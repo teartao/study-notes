@@ -11,7 +11,9 @@ import java.util.concurrent.TimeoutException;
  * @author neotao
  */
 public class Producer {
-    //定义队列名称
+    /**
+     * 定义队列名称
+     */
     private static final String DEFAULT_QUEUE = "SAMPLE_CH02";
 
     public static void main(String[] args) throws IOException, TimeoutException {
