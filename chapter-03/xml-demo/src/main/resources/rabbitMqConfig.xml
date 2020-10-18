@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/rabbit
+     http://www.springframework.org/schema/rabbit/spring-rabbit-1.2.xsd">
+
+    <!--配置connection-factory，指定连接rabbit server参数 -->
+    <rabbit:connection-factory id="connectionFactory" virtual-host="/" username="guest" password="guest"
+                               host="127.0.0.1" port="5672"/>
+
+    <!--通过指定下面的admin信息，自动创建exchange和queue -->
+    <rabbit:admin id="connectAdmin" connection-factory="connectionFactory"/>
+
+    <!--  开始定义队列了。这里的队列主要用于发消息，后面的消费者也可以监听这个队列，实现指定队列消息的收、发 -->
+    <!--定义queue -->
+    <rabbit:queue name="XML_DEMO_QUEUE01" declared-by="connectAdmin"/>
+
+    <!--定义direct交换机,01 02 都用这个交换机 -->
+    <rabbit:direct-exchange name="DIRECT_EXCHANGE_01_02" declared-by="connectAdmin">
+        <rabbit:bindings>
+            <rabbit:binding queue="XML_DEMO_QUEUE01" key="SAMPLE_CH03_XML_MSG_01_KEY">
+            </rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <!--定义rabbitTemplate用于数据的接收和发送 -->
+    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" exchange="DIRECT_EXCHANGE_01_02"/>
+
+    <!--第一个消费者,并监听上面的直连交换机声明的队列 -->
+    <bean id="consumer01" class="com.neotao.rabbitmq.samples.ch03.consumer.Consumer01"/>
+
+    <!-- 定义监听器，监视rabbitMQ服务端队列queue，当有消息到达时会通知监听在对应的队列上的监听对象 -->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener queues="XML_DEMO_QUEUE01" ref="consumer01"/>
+    </rabbit:listener-container>
+<!--
+    &lt;!&ndash;定义第二个消费者对应的(一个新的)队列，并绑定一个新的交换机交换机 &ndash;&gt;
+    <rabbit:queue name="XML_DEMO_QUEUE02" declared-by="connectAdmin"/>
+
+    <rabbit:direct-exchange name="DIRECT_EXCHANGE_01_02" declared-by="connectAdmin">
+        <rabbit:bindings>
+            <rabbit:binding queue="XML_DEMO_QUEUE02" key="SAMPLE_CH03_XML_MSG_02_KEY"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    &lt;!&ndash; 定义第二个消费者，对第二个队列进行监听 &ndash;&gt;
+    <bean id="consumer02" class="com.neotao.rabbitmq.samples.ch03.consumer.Consumer02"/>
+
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener queues="XML_DEMO_QUEUE02" ref="consumer02"/>
+    </rabbit:listener-container>
+
+    &lt;!&ndash;定义第三个消费者对应的队列和一个topic类型交换机 &ndash;&gt;
+    <rabbit:queue name="XML_DEMO_QUEUE03" declared-by="connectAdmin"/>
+
+    <rabbit:topic-exchange name="EXCHANGE_TOPIC_03" declared-by="connectAdmin">
+        <rabbit:bindings>
+            &lt;!&ndash; 这里由于topic交换机是routingKey匹配，需要注意binding的配置项是pattern &ndash;&gt;
+            <rabbit:binding queue="XML_DEMO_QUEUE03" pattern="#.Third.#"/>
+        </rabbit:bindings>
+    </rabbit:topic-exchange>
+
+    &lt;!&ndash;定义 topic交换机对应的rabbitTemplate2 用于消息的接收和发送 &ndash;&gt;
+    <rabbit:template id="amqpTemplate2" connection-factory="connectionFactory" exchange="EXCHANGE_TOPIC_03"/>
+
+    &lt;!&ndash; 消息接收者 &ndash;&gt;
+    <bean id="consumer03" class="com.neotao.rabbitmq.samples.ch03.consumer.Consumer03"/>
+
+    &lt;!&ndash; queue litener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 &ndash;&gt;
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener queues="XML_DEMO_QUEUE03" ref="consumer03"/>
+    </rabbit:listener-container>
+
+    &lt;!&ndash;定义queue &ndash;&gt;
+    <rabbit:queue name="XML_DEMO_QUEUE04" declared-by="connectAdmin"/>
+
+    &lt;!&ndash; 定义fanout exchange，并绑定前面声明的01 04 两个队列 &ndash;&gt;
+    <rabbit:fanout-exchange name="MY_FANOUT_EXCHANGE" declared-by="connectAdmin">
+        <rabbit:bindings>
+            <rabbit:binding queue="XML_DEMO_QUEUE01"/>
+            <rabbit:binding queue="XML_DEMO_QUEUE04"/>
+        </rabbit:bindings>
+    </rabbit:fanout-exchange>
+
+    &lt;!&ndash; 消息接收者 &ndash;&gt;
+    <bean id="consumer04" class="com.neotao.rabbitmq.samples.ch03.consumer.Consumer04"/>
+
+    &lt;!&ndash; queue litener 观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象 &ndash;&gt;
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener queues="XML_DEMO_QUEUE04" ref="consumer04"/>
+    </rabbit:listener-container>-->
+</beans>
