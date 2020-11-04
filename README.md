@@ -25,9 +25,9 @@ rabbitmq guides and samples
 
 
 ## [ch05 SpringAmqp](./chapter-05/README.md)
-
+### 常见api封装
 
 ## [ch06 rabbitMQ最佳实践]((./chapter-06/README.md))
-### 常见api封装
+
 ### 可靠性投递实践
 ### 常用功能原理
