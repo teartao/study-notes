@@ -1,7 +1,6 @@
 package com.neotao.rabbitmq.samples.ch03;
 
 import com.neotao.rabbitmq.samples.ch03.config.RabbitMqConfig;
-import com.neotao.rabbitmq.samples.ch03.cons.RabbitMqExchangeEnum;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.amqp.core.Message;
