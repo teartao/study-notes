@@ -50,7 +50,7 @@ left top right bottom
 
 这里的盒子不要完全理解成生活中的盒子，因为生活中的盒子都是有厚度的，css的盒子可以厚度为0( border = 0 )
 
-![image-20210710172014027](/Users/luping/codes/study/css/image-20210710172014027.png)
+![image-20210710172014027](./imgs/image-20210710172014027.png)
 
 
 
@@ -90,7 +90,7 @@ left top right bottom
 
 第二行的红色框其实可以不用，但是如果里面蓝色绿色是一个大的整体，那么最好是套一层，以便于后面统一移动比如变成下面这样
 
-![image-20210710172403084](/Users/luping/codes/study/css/image-20210710172403084.png)
+![image-20210710172403084](./imgs/image-20210710172403084.png)
 
 这样只要移动一下原来第二行的大框，所有的小元素就 可以很简单地移动到1 2的上方。
 
@@ -106,13 +106,13 @@ left top right bottom
 
 比如下面的w3c网站，看上去多半是我下面画的这种布局方式。
 
-![image-20210710173010503](/Users/luping/codes/study/css/image-20210710173010503.png)
+![image-20210710173010503](./imgs/image-20210710173010503.png)
 
 
 
 下面这种规划肯定也是可以的
 
-![image-20210710173145928](/Users/luping/codes/study/css/image-20210710173145928.png)
+![image-20210710173145928](./imgs/image-20210710173145928.png)
 
 
 
@@ -130,7 +130,7 @@ left top right bottom
 
 这样一看，内容就各自放在一个大盒子里，如果你非要下面这样规划，看看会不会觉得奇怪？
 
-![image-20210710173512910](/Users/luping/codes/study/css/image-20210710173512910.png)
+![image-20210710173512910](./imgs/image-20210710173512910.png)
 
 
 
@@ -150,13 +150,13 @@ left top right bottom
 
 (有的元素可以通过css属性脱离父元素，这个后面会说)
 
-<img src="/Users/luping/codes/study/css/image-20210710174332352.png" alt="image-20210710174332352" style="zoom: 33%;" />
+<img src="./imgs/image-20210710174332352.png" alt="image-20210710174332352" style="zoom: 33%;" />
 
 
 
 比如上面的例子，我们把黑色框里面的大红框移到了第一行，那么里面所有小元素就都到了上面一行。
 
-![image-20210710175858018](/Users/luping/codes/study/css/image-20210710175858018.png)
+![image-20210710175858018](./imgs/image-20210710175858018.png)
 
 通过浏览器检查元素也可以看见，当选中最大的红框时，将鼠标箭头移动到调试框(左下)的margin部分，会在页面元素(右边)看到同样橙色的边框，修改红框的`margin:20px ` 中的值，便可以看到大红框内部的所有元素都跟着移动了。随着20增大 边距变大，20缩小，边距变小
 
@@ -179,7 +179,7 @@ left top right bottom
 
 
 
-![image-20210710175813794](/Users/luping/codes/study/css/image-20210710175813794.png)
+![image-20210710175813794](./imgs/image-20210710175813794.png)
 
 
 
