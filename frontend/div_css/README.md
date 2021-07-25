@@ -37,6 +37,8 @@ left top right bottom
 
 浮动（float）：left right
 
+!important : `width:100px !important`
+
 
 
 ## 基础认识：
@@ -219,11 +221,58 @@ ul li 为有序列表，li为list缩写，li默认带有点号作为序号
 
 ## 定位 position 
 
+position和block一样复杂，有很多属性，pc常用的主要有`relative` `absolute` `fixed` 还有个默认属性static。有的元素还默认有`initial` 和 `inherit`本文暂时不讲，感兴趣百度吧。
 
 
 
+relative 可以让元素以父元素的四角为坐标原点，进行上下左右移动，设置top正值时，负值时元素上移，其它方位类似。左:正=右移；左:负 =左移；当滚动条向下滚动时，元素会随着父元素一起移动
+
+absolute 可以让元素基于页面四角为坐标原点，进行上下左右移动。当滚动条向下滚动时，元素会跟随页面一起滚动
+
+fixed可以让元素基于浏览器窗口(tab页四角为坐标原点，进行上下左右移动)。但不会随着滚动条移动(由于窗口大小不变，fixed元素始终静止在浏览器窗口的固定位置，常见的如右下角弹窗广告，始终在显示器/浏览器右下角)
 
 
+
+## 浮动 float 
+
+可以让元素浮动，脱离原本的文档流(图层)，给原来的元素腾出空间，(float元素后方的元素会向前顶上，占据float元素的原来位置)
+
+
+
+## 综合：
+
+### 元素的图层堆叠
+
+<img src="image-20210726020946385.png" alt="image-2021726020053068" style="zoom:50%;border:1px solid #000000" />
+
+由图可见，**同样类型的元素**(display positon相同)，元素的画布堆叠次序为**`后写的元素在上层（上层元素会遮住下层元素）`**
+
+<img src="image-20210726020053068.png" alt="image-2021726020053068" style="zoom:50%;border:1px solid #000000" />
+
+由图可见，我元素的书写顺序为`red > green > orange`，然后orange却因为加了float变到了最底层
+
+可见，float会让元素浮动到元素图层下方
+
+<img src="image-20210726020421645.png" alt="image-2021726020053068" style="zoom:50%;border:1px solid #000000" />
+
+而我将green写到前面，依然没能让红色盖住绿色，说明position在inline-block元素的上层画布上。
+
+
+## 其它：
+
+
+
+其它属性系统地学习必然推荐w3c : https://www.w3school.com.cn/css/index.asp
+
+推荐阅读：https://www.cnblogs.com/coco1s/p/5893921.html 这篇讲了本文未提及的一些常见问题的做法。
+
+
+
+看了很多资料，发现有一些大佬写的都比我好，这里推荐一些有趣的，可能用到的场景和问题，看完这些可以对平时工作中遇到的样式问题提供解决思路，不至于让自己一头雾水不知道搜什么资料。
+
+
+
+其它问题就遇到了再百度吧。比如position  display 的其它属性
 
 
 
