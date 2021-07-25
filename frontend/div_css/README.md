@@ -22,11 +22,12 @@ https://blog.csdn.net/zhang79513/article/details/102666861
 
 
 
-**本文主要介绍PC常用的布局方式，涉及的css属性如下：**
+### 常用布局属性：
+本文主要介绍PC常用的布局方式，涉及的css属性如下：
 
 外边距：margin （含 margin-left margin-top margin-right margin-bottom）
 
-内边距：Padding ( padding-left padding top padding-right padding-bottom)
+内边距：padding ( padding-left padding top padding-right padding-bottom)
 
 display : 块元素（block）；行内块元素（ inline-block）；行内元素（ inline ）
 
@@ -52,39 +53,17 @@ left top right bottom
 
 ![image-20210710172014027](./imgs/image-20210710172014027.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 有了盒模型的概念，元素间便有了父parent / 子children /兄弟 (前一个prev，后一个 next)
 
-上面的图可以看成：
+上图的布局结构可看成：
 
-**最外面红色**理解成浏览器窗口，就是window，里面有各种各样元素。
+**最外面红色**：理解成浏览器窗口，就是window，里面有各种各样元素。
 
-**第一行**有1 2 两个红色大框
+**第一行**：有1 2 两个红色大框
 
-**第二行**有一个红色大框，里面有蓝色 绿色小框 7 8 9 等等
+**第二行**：有一个红色大框，里面有蓝色 绿色小框 7 8 9 等等
 
-**第三行**有三个红色大框 3 4 5
+**第三行**：有三个红色大框 3 4 5
 
 
 
@@ -146,7 +125,7 @@ left top right bottom
 
 ## 外边距 margin
 
-外边距主要用于移动元素本身，可以理解为修改该元素在父元素中地位置，这个操作会统一移动元素内部的所有子元素。比如，你把书架上的文具盒拿了下来，那么文具盒里面的铅笔是不是都被拿走了？
+外边距主要用于移动元素本身，可以理解为修改该元素在父元素中地位置，这个操作会移动元素的同时，会统一移动元素内部的所有子元素。
 
 (有的元素可以通过css属性脱离父元素，这个后面会说)
 
@@ -164,34 +143,81 @@ left top right bottom
 
 **所以：**margin是移动元素(修改元素本身所在的位置)，以父元素为参考，调整它在父元素中的位置。
 
-
-
 并且该属性会让后面的兄弟节点跟着移动（挤掉兄弟节点的空间 / 让出空间给兄弟节点)。
 
 如果元素往右移动，那么它后面的兄弟也被挤到右边，不够的话，兄弟会换行。
 
+如果子元素在调整margin后margin+width超过父元素宽度，则子元素会以左上为基准，向右/上移动，右/上多出部分则显示在边框外
 
+margin有多种，其中margin-left margin-top margin-right margin-bottom 可单独调整该方向边距。
 
-## 内边距：padding
+margin属性还可以分别通过1/2/3/4个参数分别设置外边距属性(但注意部分浏览器如IE9以下，不支持该混合属性)：
 
+- 当1参数时，设置上下左右的外边距。如：`margin:10px` 则表示该元素上下左右均为10px的外边距；
+- 当2参数，第一参数为**上下**，第二参数为**左右**。如`margin: 10px 20px`表示该元素上下外边距分别为10px，左右外边距分别为20px；
+- 当3参数时，第一参数为上，第二参数为左右，第三参数为下。如：`margin:10px 20px 30px`表示上边距10px ，左右分别20px，下边距30px
+- 当4参数时，第 1 2 3 4 参数依次为上、右、下、左四边距的距离。如`margin:10px 20px 30px 40px`表示
 
+<img src=".\imgs\image-20210726005047323.png" alt="image-20210726005047323" style="zoom:50%;border:1px solid #000000" />
 
-
-
-
-![image-20210710175813794](./imgs/image-20210710175813794.png)
-
-
-
-
-
-
-
+**常见用法：** `margin:0 auto;`常用于设置元素居中，表示上下0像素，左右自动(平分)。这里的0也可以根据实际需要调整，上下边距。0作为数值时，可以不用`px` `%` `em` 等单位（反正都是0，管它什么单位呢~）
 
 
 
+## 内边距 padding
+
+内边距即元素内部留有的边距，如下图，最外层红色框设置了内边距为10px，则内部元素统一地与为父元素间留下了10px的距离(绿色部分)
+
+<img src="./imgs/image-20210710175813794.png" alt="image-20210710175813794.png" style="zoom:50%;border:1px solid #000000" />
+
+调整元素padding时，会使得该元素内部的子元素统一向中心靠拢，与该元素的边框之间留下指定的距离，该属性常用来调整文档，页面布局，如果内部元素的宽度超过父元素的大小，则子元素会留下左 上边距，右下则会超出父元素的边框。
+
+padding同margin类似，也有padding-left、 padding-top、 padding-right、 padding-bottom四属性单独设置。同样的padding 也有1 2 3 4个参数的用法，所表示的方位也一样：
+
+1参=四边；2参=上下+左右；3参=上+左右+下；4参=上+右+下+左
 
 
+
+## 显示方式display 
+
+display有很多属性，用起来复杂多变，但目前pc端常用的主要为`block` `inline-block` `inline `
+
+<img src=".\imgs\image-20210726010548959.png" alt="image-20210726010548959" style="zoom:50%;border: 1px solid #000000" /><img src="imgs\image-20210726010759845.png" alt="image-20210726010759845" style="zoom:50%;border 1px solid #000000" />
+
+大多数元素都有默认的display属性，常见的如：span 文本文字均为`inline `
+
+`div` 、大纲标题`h1 - h6` 、列表`ul li ol` 均为`block`
+
+inline没有宽高，其宽高由内部元素大小决定，内部元素越大，则元素越宽越高，没有子元素时，宽高为0
+
+inline不可通过width height设置宽高(只由内部元素决定宽高)。一行内如果都是inline元素，则在一行内排开，排满自动换行。
+
+block则"相反"，默认占一行(宽100%)，高度为0，元素越大，高度越高。block可以设置height调整高度。而width即使设置了，但也只改变了元素宽度，但元素仍然占一行(后面的元素换到下一行/在下方另起一行)。
+
+这里常见的
+
+![image-20210726011910606](C:\Users\admin\codes\study-notes\frontend\div_css\image-20210726011910606.png)
+
+由图可见，该元素虽然设置了`width:300px;height:100px`，该元素宽高虽变，但右边仍留下了很大一块黄色外边距(margin)，即block元素仍占一行 width+margin =100%
+
+因此div常用作布局容器，单独作为一行。
+
+
+
+ul li 为有序列表，li为list缩写，li默认带有点号作为序号
+
+<img src="C:\Users\admin\codes\study-notes\frontend\div_css\image-20210726012341699.png" alt="image-20210726012341699" style="zoom:50%;border:1px solid #000000" />
+
+<img src="C:\Users\admin\codes\study-notes\frontend\div_css\image-20210726012642673.png" alt="image-20210726012642673" style="zoom:50%;border:1px solid #000000" />
+
+<img src="C:\Users\admin\codes\study-notes\frontend\div_css\image-20210726012757811.png" alt="image-20210726012757811" style="zoom:50%;border:1px solid #000000" />
+
+
+由图可见，li元素默认占一行，可以通过修改width调整元素宽度，但仍占一行。
+
+
+
+## 定位 position 
 
 
 
