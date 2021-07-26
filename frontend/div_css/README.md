@@ -198,7 +198,7 @@ block则"相反"，默认占一行(宽100%)，高度为0，元素越大，高度
 
 这里常见的
 
-![image-20210726011910606](C:\Users\admin\codes\study-notes\frontend\div_css\image-20210726011910606.png)
+![image-20210726011910606](image-20210726011910606.png)
 
 由图可见，该元素虽然设置了`width:300px;height:100px`，该元素宽高虽变，但右边仍留下了很大一块黄色外边距(margin)，即block元素仍占一行 width+margin =100%
 
@@ -208,11 +208,11 @@ block则"相反"，默认占一行(宽100%)，高度为0，元素越大，高度
 
 ul li 为有序列表，li为list缩写，li默认带有点号作为序号
 
-<img src="C:\Users\admin\codes\study-notes\frontend\div_css\image-20210726012341699.png" alt="image-20210726012341699" style="zoom:50%;border:1px solid #000000" />
+<img src="image-20210726012341699.png" alt="image-20210726012341699" style="zoom:50%;border:1px solid #000000" />
 
-<img src="C:\Users\admin\codes\study-notes\frontend\div_css\image-20210726012642673.png" alt="image-20210726012642673" style="zoom:50%;border:1px solid #000000" />
+<img src="image-20210726012642673.png" alt="image-20210726012642673" style="zoom:50%;border:1px solid #000000" />
 
-<img src="C:\Users\admin\codes\study-notes\frontend\div_css\image-20210726012757811.png" alt="image-20210726012757811" style="zoom:50%;border:1px solid #000000" />
+<img src="image-20210726012757811.png" alt="image-20210726012757811" style="zoom:50%;border:1px solid #000000" />
 
 
 由图可见，li元素默认占一行，可以通过修改width调整元素宽度，但仍占一行。
